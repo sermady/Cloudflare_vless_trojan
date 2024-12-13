@@ -1,22 +1,25 @@
+# Serv00小白回车一条龙🐲教程即将更新！！！
 # Cloudflare-workers/pages代理脚本
 ### 本项目仅支持本地化部署
-### 本项目不使用订阅器、节点转换等第三方外链引用，无需担心节点订阅被外链作者查看
+### 本项目配置都为本地化编辑，不使用订阅器、订阅转换等第三方外链引用，无需担心节点订阅被外链作者查看
 --------------------------------
 ## 脚本特色：
-### 懒人小白专用！默认节点都为CF官方IP，无需频繁更新订阅获取客户端优选IP
+#### 懒人小白专用！默认节点都为CF官方IP，无需频繁更新订阅获取客户端优选IP
+#### 为减少新手小白额外的成本，本项目不推荐使用自定义域名，如果你一定要用自定义域名，也可以
 #### Workers方式：支持vless+ws+tls、trojan+ws+tls、vless+ws、trojan+ws代理节点
 #### Pages方式：支持vless+ws+tls、trojan+ws+tls代理节点
-#### CF Vless/Trojan的单节点支持path路径自定义三类proxyip（IPV4形式、IPV6形式、域名形式）
 #### 支持单节点链接、聚合通用节点订阅、sing-box节点订阅、clash节点订阅
-### 目前CF Vless/Trojan仅提供乱码混淆版，修改参数需要使用变量
+#### 虽然仅乱码混淆版可用，但只有修改uuid/密码时才必须使用变量
 -------------------------------------------------------------
 
 ### 交流平台：[甬哥博客地址](https://ygkkk.blogspot.com)、[甬哥YouTube频道](https://www.youtube.com/@ygkkk)、[甬哥TG电报群组](https://t.me/+jZHc6-A-1QQ5ZGVl)、[甬哥TG电报频道](https://t.me/+DkC9ZZUgEFQzMTZl)
 --------------------------------
 
-### 新手用户请先查看入门教程：[CF vless/trojan永久免费节点(整合版)：无需自定义域名，快速上手搭建；全平台免费客户端设置说明；独家优选IP与Proxyip的意义说明；一键生成美国、香港、欧洲三区优选官方IP](https://youtu.be/WwAeLyEz6jY)
+### 推荐新手用户请先看以下两个入门视频教程：
 
-### 最新参数变量修改请参考视频教程：https://youtu.be/cVLxDKHTv6w?si=j3y-T8fMxdoBNIlS&t=40
+[CF vless/trojan免费节点混淆时代来临：workers/pages代码混淆后详细设置的更新说明；1101报错总结；福利计划：甬哥自建多个ProxyIP让大家使用](https://youtu.be/QSFaP5EVI04)
+
+[CF vless/trojan永久免费节点(视频中代码内容请替换为混淆代码)：无需自定义域名，快速上手搭建；全平台免费客户端设置说明；独家优选IP与Proxyip的意义说明；一键生成美国、香港、欧洲三区优选官方IP](https://youtu.be/WwAeLyEz6jY)
 
 ---------------------------------------------
 
@@ -25,9 +28,9 @@
 | 变量作用 | 变量名称| 变量值要求| 变量默认值| 变量要求|
 | :--- | :--- | :--- | :--- | :--- |
 | 1、必要的uuid | uuid (小写字母) |符合uuid规定格式 |万人骑uuid：86c50e3a-5b87-49dd-bd20-03c7f2735e40|建议|
-| 2、能上CF类网站 | proxyip (小写字母) |443端口：ipv4地址、[ipv6地址]、域名。非443端口：IPV4地址:端口、[IPV6地址]:端口、域名:端口|proxyip域名：大佬公用域名|可选|
-| 3、订阅节点优选IP | ip1到ip13，共13个 |CF官方IP、CF反代IP、CF优选域名| CF官方不同地区的visa域名|可选|
-| 4、优选IP对应端口 | pt1到pt13，共13个 |CF13个标准端口、反代IP对应任意端口| CF13个标准端口|可选|
+| 2、全局节点能上CF类网站 | proxyip (小写字母) |443端口：ipv4地址、[ipv6地址]、域名。非443端口：IPV4地址:端口、[IPV6地址]:端口、域名:端口|proxyip域名：大佬公用域名|可选|
+| 3、订阅节点：优选IP | ip1到ip13，共13个 |CF官方IP、CF反代IP、CF优选域名| CF官方不同地区的visa域名|可选|
+| 4、订阅节点：优选IP对应端口 | pt1到pt13，共13个 |CF13个标准端口、反代IP对应任意端口| CF13个标准端口|可选|
 
 ---------------------------------
 
@@ -36,22 +39,23 @@
 | 变量作用 | 变量名称| 变量值要求| 变量默认值| 变量要求|
 | :--- | :--- | :--- | :--- | :--- |
 | 1、必要的密码 | pswd (小写字母) |建议字母数字 |万人骑密码：trojan|建议|
-| 2、能上CF类网站 | proxyip (小写字母) |443端口：ipv4地址、[ipv6地址]、域名。非443端口：IPV4地址:端口、[IPV6地址]:端口、域名:端口|proxyip域名：大佬公用域名|可选|
-| 3、订阅节点优选IP | ip1到ip13，共13个 |CF官方IP、CF反代IP、CF优选域名| CF官方不同地区的visa域名|可选|
-| 4、优选IP对应端口 | pt1到pt13，共13个 |CF13个标准端口、反代IP对应任意端口| CF13个标准端口|可选|
+| 2、全局节点能上CF类网站 | proxyip (小写字母) |443端口：ipv4地址、[ipv6地址]、域名。非443端口：IPV4地址:端口、[IPV6地址]:端口、域名:端口|proxyip域名：大佬公用域名|可选|
+| 3、订阅节点：优选IP | ip1到ip13，共13个 |CF官方IP、CF反代IP、CF优选域名| CF官方不同地区的visa域名|可选|
+| 4、订阅节点：优选IP对应端口 | pt1到pt13，共13个 |CF13个标准端口、反代IP对应任意端口| CF13个标准端口|可选|
 
-#### 特别注意：
+#### 订阅节点中IP与端口的变量（3与4）特别注意 【新手小白可无视变量（3与4），使用默认即可】
 
-1、重点：首次pages部署好后，其域名可能要等1分钟才能生效打开
+0、由于现在只能用混淆代码，无法在文件上直接修改了，只能使用变量
 
-2、重点：pages的变量更改好后，必须点击右上角创建部署选项，重新上传一次原始混淆pages文件来使新变量生效
-![photo_2024-12-02_15-17-19](https://github.com/user-attachments/assets/31a659ef-8e2c-46be-b806-d16ae7ccc69f)
+1、切记：当你非要用订阅类的客户端，且要改优选IP时，才需要设置ip1到ip13，pt1到pt13的变量
 
-3、ip1到ip7，pt1到pt7，在订阅分享链接中，仅支持80系端口关TLS节点
+2、ip1到ip7，pt1到pt7，在订阅分享链接中，仅支持80系端口关TLS节点
 
-4、ip8到ip13，pt8到pt13，在订阅分享链接中，仅支持443系端口开TLS节点
+3、ip8到ip13，pt8到pt13，在订阅分享链接中，仅支持443系端口开TLS节点
 
-5、单节点可随意DIY修改并无限克隆节点，具体见相关[手搓节点的视频教程](https://youtu.be/WwAeLyEz6jY)
+4、设置官方IP，无需设置端口（默认已设置13个CF标准端口）；设置反代IP需要分开关TLS，端口变量也必须设置
+
+5、订阅节点变量设置可参考此[视频教程](https://youtu.be/8s-ELRuFaeE?si=MjhcKbt20d2Q2eqp&t=447)
 
 ---------------------------------
 ## 三：自定义proxyip
@@ -60,7 +64,7 @@
 
 支持IPV4、IPV6、域名三种方式（端口为443时，可不写:端口）
 
-1、聚合订阅节点变量形式（上文一与二已说明）：
+1、全局节点变量形式（上文一与二已说明）：
 
 | proxyip端口 | IPv4形式| IPv6形式| 域名形式|
 | :--- | :--- | :--- | :--- |
@@ -78,19 +82,27 @@
 
 1、单节点path路径变更proxyip：仅影响当前客户端正在设置的单节点，并不影响其他单节点或者订阅节点的proxyip
 
-2、聚合订阅节点变量变更proxyip：影响所有未设置path路径proxyip的节点
+2、全局节点变更proxyip：影响所有未设置path路径proxyip的节点
+
+3、当节点的path路径出现```/pyip=```关键字时，此节点的proxyip只认准path路径设置的proxyip，全局proxyip不起作用
 
 ---------------------------------
 ## 四：无需socks5！小白利用reality协议一键自制proxyip、80系/443系的任意端口反代IP
 
 ### 1、Serv00专用：
 
-修改自Serv00|ct8老王sing-box安装脚本，支持一键三协议：vless-reality、hysteria2、tuic。
+修改自Serv00|ct8老王sing-box安装脚本，支持一键三协议：vless-reality、vmess-ws(argo)、hysteria2。
 
-主要增加reality协议默认支持 CF vless/trojan 节点的proxyip以及非标端口的优选反代IP功能，脚本默认输出结果
+主要增加reality协议默认支持 CF vless/trojan 节点的proxyip以及非标端口的优选反代IP功能。视频教程即将发布
+
+Serv00专用一键脚本：
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/Cloudflare_vless_trojan/main/serv00_proxyip.sh)
 ```
+脚本界面预览图：
+
+![f053ce401a12b85bc0420b870c3c7dc](https://github.com/user-attachments/assets/fa00cdf3-77b4-49dc-a095-69d1a5251767)
+
 
 ### 2、VPS专用：
 
@@ -170,7 +182,7 @@ CF Trojan：在网页地址栏输入 https:// workers域名 或者 pages域名 �
 
 2、CF优选反代IP (电脑版，带测速)
 
-3、CF优选官方IP (美、亚、欧三地区无交互电脑版！强烈推荐！！！)
+3、CF优选官方IP (美、亚、欧三地区无交互电脑版！强烈推荐！点击[视频教程](https://youtu.be/6kKIzObEZ2c))
 
 4、CF优选官方IP (电脑版，带测速)
 
@@ -197,11 +209,11 @@ CF Trojan：在网页地址栏输入 https:// workers域名 或者 pages域名 �
 
 注意：Shadowrocket(小火箭)、v2box、v2rayn、v2rayng客户端对trojan+ws有强制开启TLS问题，造成trojan+ws不通。且clash订阅没有trojan+ws节点。特此说明
 
+关于客户端使用问题，请看[CF vless/trojan永久免费节点教程（六）：节点不能用，问题出在哪？多平台免费客户端设置指南及避坑说明](https://youtu.be/8E0l0nQWLxs)
+
 ---------------------------------
 
-### 相关说明及注意点请查看[甬哥博客](https://ygkkk.blogspot.com/2023/07/cfworkers-vless.html)
-
-### 视频教程：
+### CF视频教程集合：
 
 [CF workers永久免费vless节点搭建教程（一）：全网首发演示跳IP现象，解密两大节点使用技巧，优选IP、优选域名的优缺点说明](https://youtu.be/9V9CQxmfwoA)
 
@@ -224,6 +236,9 @@ CF Trojan：在网页地址栏输入 https:// workers域名 或者 pages域名 �
 [ClouDNS永久免费域名最终教程：CF pages vless自定义域名直接部署](https://youtu.be/PN0BLANXh4I)
 
 小白优选IP应用推荐：[CF优选IP解放小白最终方案：一键自动生成美国、香港、欧洲三区优选官方IP，电脑WIN、安卓android、苹果ios多平台一键通用](https://youtu.be/6kKIzObEZ2c)
+
+最新推荐：[CF vless/trojan免费节点混淆时代来临：workers/pages代码混淆后详细设置的更新说明；1101报错总结；福利计划：甬哥自建多个ProxyIP让大家使用](https://youtu.be/QSFaP5EVI04)
+
 
 ---------------------------------
 ---------------------------------
@@ -260,6 +275,6 @@ curl -sSL https://gitlab.com/rwkgyg/CFwarp/raw/main/point/cfip.sh -o cfip.sh && 
 ### 感谢你右上角的star🌟
 [![Stargazers over time](https://starchart.cc/yonggekkk/Cloudflare-workers-pages-vless.svg)](https://starchart.cc/yonggekkk/Cloudflare-workers-pages-vless)
 ------------------------------------------------------------------------
-### 代码来源：[ca110us](https://github.com/ca110us/epeius)、[emn178](https://github.com/emn178/js-sha256/blob/master/src/sha256.js)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel)、[badafans](https://github.com/badafans/Cloudflare-IP-SpeedTest)、[XIU2](https://github.com/XIU2/CloudflareSpeedTest)
+### 代码来源：[ca110us](https://github.com/ca110us/epeius)、[emn178](https://github.com/emn178/js-sha256/blob/master/src/sha256.js)、[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel)、[badafans](https://github.com/badafans/Cloudflare-IP-SpeedTest)、[XIU2](https://github.com/XIU2/CloudflareSpeedTest)、[老王eooce](https://github.com/eooce/Sing-box/blob/test/sb_00.sh)、[frankiejun](https://github.com/frankiejun/serv00-play/blob/main/start.sh)
 
 ### 声明：所有代码来源于Github社区，并通过ChatGPT进行整合
